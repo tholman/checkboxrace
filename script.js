@@ -9,14 +9,22 @@
   const finalTime = document.querySelector(".finalTime");
   const resetButton = document.querySelector(".resetButton");
   const endBoard = document.querySelector(".end");
-  const boostWords = ['Speed!', 'Nice!', 'Fast!', 'Power!', 'Great!', 'Awesome!', 'Amazing!', 'Super!'];
+  const boostWords = [
+    "Speed!",
+    "Nice!",
+    "Fast!",
+    "Power!",
+    "Great!",
+    "Awesome!",
+    "Amazing!",
+    "Super!",
+  ];
 
   resetButton.addEventListener("click", reset);
 
-  setTimeout(()=> {
+  setTimeout(() => {
     window.scrollTo(0, 0);
-  }, 50)
-  
+  }, 50);
 
   let animationFrame;
   let startTime;
@@ -83,7 +91,8 @@
       checkboxWrapper.clientHeight / 2 + verticalMovement - 60
     }px`;
     boostElement.style.left = `${element.offsetLeft}px`;
-    boostElement.innerHTML = boostWords[Math.floor(Math.random() * boostWords.length)];
+    boostElement.innerHTML =
+      boostWords[Math.floor(Math.random() * boostWords.length)];
     checkboxWrapper.appendChild(boostElement);
   }
 
@@ -112,7 +121,7 @@
 
         event.stopPropagation();
 
-        if(Math.random() > 0.6) addBoost(checkbox);
+        if (Math.random() > 0.6) addBoost(checkbox);
 
         currentIndex++;
         currentScore.innerText = currentIndex.toString().padStart(3, "0");
