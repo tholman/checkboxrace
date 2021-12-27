@@ -1,0 +1,162 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+input {
+  transition: transform 100ms ease;
+  cursor: pointer;
+}
+
+.checkboxes {
+  height: 600px;
+  display: flex;
+  align-items: center;
+  padding-left: calc(50vw - 10px);
+  padding-right: calc(60vw);
+  transition: transform 100ms ease;
+  border-top: 3px dashed #f5f5f5;
+  border-bottom: 3px dashed #f5f5f5;
+}
+
+.inner {
+  padding-right: 30px;
+}
+
+.central {
+  font-family: monospace;
+  position: fixed;
+  transform: translateX(-50%);
+  pointer-events: none;
+  left: 50%;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 150ms ease-out;
+}
+
+.score {
+  left: 0;
+  padding: 30px;
+  padding-right: 60px;
+  height: 100vh;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 1) 80%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  transform: none;
+  text-align: center;
+  font-size: 16px;
+  line-height: 25px;
+  color: white;
+}
+
+.score.show {
+  color: black;
+}
+
+.tips {
+  max-width: 150px;
+  text-align: center;
+  font-weight: bold;
+  transform: translateY(-85%) translateX(-50%);
+}
+
+.flag {
+  width: 25px;
+  height: 25px;
+}
+
+.end {
+  padding: 20px;
+  background: #eee;
+  margin-left: 20px;
+  position: relative;
+  font-family: monospace;
+  width: 220px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: opacity 150ms ease-out;
+  opacity: 0;
+}
+
+p {
+  margin: 0;
+}
+
+.finalTime {
+  font-weight: bold;
+}
+
+.nice {
+  font-size: 18px;
+}
+
+.end:before {
+  position: absolute;
+  content: "";
+  left: -20px;
+  top: 50%;
+  margin-top: -10px;
+  border-left: 10px solid transparent;
+  border-right: 10px solid #eee;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  width: 20px;
+  height: 20px;
+  box-sizing: border-box;
+}
+
+.boost {
+  position: absolute;
+  pointer-events: none;
+  animation: slideUp 800ms cubic-bezier(0.25, 1, 0.5, 1);;
+  opacity: 0;
+  font-family: monospace;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 1;
+    transform: translateY(0) translateX(-50%);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-100px) translateX(-50%);
+  }
+}
+  
+}
+
+.resetButton {
+  width: 120px;
+  margin: auto;
+  margin-top: 2px;
+}
+
+.hide {
+  opacity: 0;
+}
+
+.show {
+  opacity: 1;
+}
