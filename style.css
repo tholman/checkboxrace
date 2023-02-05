@@ -20,6 +20,25 @@ input {
   cursor: pointer;
 }
 
+.toms {
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.toms {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 33px;
+  height: 33px;
+  background-repeat: no-repeat;
+  background-color: rgba(0, 0, 0, 0.07);
+  border-radius: 50%;
+  background-size: 20px 20px;
+  background-position: center;
+  vertical-align: top;
+}
+
 .checkboxes {
   height: 600px;
   display: flex;
